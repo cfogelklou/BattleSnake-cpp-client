@@ -30,7 +30,7 @@ jobs:
         run: git submodule update --init --recursive
       
       # Runs a set of commands using the runners shell
-      - name: Build pistache
+      - name: Build pistache 2017
         run: |
           mkdir pistache/build
           pushd pistache/build
@@ -38,6 +38,10 @@ jobs:
           make -j4 && sudo make install
           popd
           
-      - name: Debug build
+      - name: Debug build of all snakes
         run: |
-          make -j4 build       
+          mkdir build
+          mkdir build-opt
+          mkdir run_basic
+          mkdir run_boost
+          make -j4       
