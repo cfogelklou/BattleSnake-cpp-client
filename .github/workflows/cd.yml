@@ -1,9 +1,20 @@
-name: CD
-on:
-  push:
-    branches: [master]
+name: PR
   pull_request:
-    branches: [master]
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  status: {}
+env:
+  RELEASE: release
 jobs:
   build:
     runs-on: ubuntu-latest
