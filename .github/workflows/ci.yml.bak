@@ -29,3 +29,5 @@ jobs:
           mkdir run_basic
           mkdir run_boost
           make -j4       
+
+      # End of this workflow
