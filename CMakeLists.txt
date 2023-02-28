@@ -6,7 +6,7 @@ if (UNIX)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 endif ()
 
-find_library(pistache REQUIRED)
+#find_library(pistache REQUIRED)
 
 include_directories(
 	${CMAKE_CURRENT_SOURCE_DIR}/src
