@@ -1,0 +1,33 @@
+name: CD
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Checkout submodules
+        run: git submodule update --init --recursive
+      
+      - name: Build pistache circa 2017
+        run: |
+          mkdir pistache/build
+          pushd pistache/build
+          cmake ..
+          make -j4 && sudo make install
+          popd
+          
+      - name: Debug build of all snakes
+        run: |
+          mkdir build
+          mkdir build-opt
+          mkdir run_basic
+          mkdir run_boost
+          make -j4       
+
+      # End of this workflow
