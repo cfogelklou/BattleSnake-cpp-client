@@ -1,9 +1,9 @@
 name: CD
 on:
   push:
-    branches: [master]
+    branches: [master, devel]
   pull_request:
-    branches: [master]
+    branches: [master, devel]
 jobs:
   build:
     runs-on: ubuntu-latest
