@@ -1,7 +1,7 @@
 name: CD
 on:
   push:
-    branches: [master, devel]
+    branches: [master, devel, ga_demo_2023]
   pull_request:
     branches: [master, devel]
 jobs:
@@ -11,11 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: "true"      
-      
+          submodules: "true"
+
       - name: Checkout submodules
         run: git submodule update --init --recursive
-      
+
       - name: Build pistache circa 2017
         run: |
           mkdir -p pistache/build
@@ -23,13 +23,13 @@ jobs:
           cmake ..
           make -j4 && sudo make install
           popd
-          
+
       - name: Debug build of all snakes
         run: |
           mkdir build
           mkdir build-opt
           mkdir run_basic
           mkdir run_boost
-          make -j4       
+          make -j4
 
       # End of this workflow
