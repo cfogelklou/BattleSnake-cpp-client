@@ -1,7 +1,5 @@
 # BattleSnake-cpp-client
 
-[![CD](https://github.com/cfogelklou/BattleSnake-cpp-client/actions/workflows/ci.yml/badge.svg)](https://github.com/cfogelklou/BattleSnake-cpp-client/actions/workflows/ci.yml)
-
 BattleSnake example clients to use as base for your own creations.
 
 Provides C and C++ object mapping and board abstraction for the BattleSnake REST API.
